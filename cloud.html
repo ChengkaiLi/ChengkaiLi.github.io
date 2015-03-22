@@ -6,10 +6,9 @@
 <script>
   var fill = d3.scale.category20();
   d3.layout.cloud().size([300, 300])
-      .words([
-        "Hello", "world", "normally", "you", "want", "more", "words",
-        "than", "this","Hello", "world","Hello", "world","Hello", "world"].map(function(d) {
-        return {text: d, size: 10 + Math.random() * 90};
+      .words([["Hello",2],["world",3], ["normally",4], ["you",2], ["want",5], ["more",2], ["words",1],
+        ["than",2], ["this",3]].map(function(d) {
+        return {text: d[0], size: d[1]};
       }))
       .padding(5)
       .rotate(function() { return ~~(Math.random() * 2) * 90; })
