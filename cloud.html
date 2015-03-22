@@ -5,7 +5,7 @@
 <script src="d3.layout.cloud.js"></script>
 <script>
   var fill = d3.scale.category20();
-  var wordcounts=d3.json("chinese.json");
+  var wordcounts=d3.json("chinese.json").children;
   d3.layout.cloud().size([300, 300])
       .words(wordcounts.map(function(d) {
         return {text: d.name, size: d.size};
